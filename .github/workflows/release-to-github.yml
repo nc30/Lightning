@@ -1,4 +1,4 @@
-name: Release to Github Release
+name: Release to Github
 on:
   push:
     tags:
@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        users: actions/checkout@master
+        uses: actions/checkout@master
       - nmae: Create Release
         id: create_release
-        users: actions/create-release@latest
+        uses: actions/create-release@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
